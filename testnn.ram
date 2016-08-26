@@ -1,0 +1,34 @@
+; Programa: n^n
+;
+; Pseudocodigo:
+;
+;		if(n > 0) {								n = r1
+; 		resultado = n							resultado = r2
+;			contador = n - 1					contador = r3
+;			while (contador > 0) {
+;				resultado = resultado * n
+;				contador--
+;			}
+;		}
+			READ 1
+			LOAD 1
+			JGTZ if
+			LOAD =0
+			STORE 2
+			JUMP end
+	if : LOAD 1
+			STORE 2
+			LOAD 1
+			SUB =1
+			STORE 3
+	whileif :	LOAD 3
+			JZERO end
+			LOAD 2
+			MUL 1
+			STORE 2
+			LOAD 3
+			SUB =1
+			STORE 3
+			JUMP whileif
+	end : WRITE 2
+			HALT
